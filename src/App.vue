@@ -1,11 +1,10 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import TabbarView from 'components/common/TabbarView.vue';
+import TabbarView from 'components/common/tabbar/TabbarView.vue';
 </script>
 
 <template>
   <div>
-    <p>坎坎坷坷</p>
     <RouterView />
     <TabbarView/>
   </div>

@@ -2,7 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
+import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
@@ -14,5 +14,13 @@ export default defineConfig({
       'views': fileURLToPath(new URL('./src/views', import.meta.url)),
       'network': fileURLToPath(new URL('./src/network', import.meta.url))
     }
+  },
+  css: {
+    preprocessorOptions: {
+      less: {
+        charset: false,
+        additionalData: '@import "./src/assets/css/base.less";',
+      }
+    },
   }
 })

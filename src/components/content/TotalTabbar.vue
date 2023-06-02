@@ -1,5 +1,5 @@
 <script setup>
-import TabbarItem from '../common/TabbarItem.vue';
+import TabbarItem from '../common/tabbar/TabbarItem.vue';
 
 </script>
 <template>
