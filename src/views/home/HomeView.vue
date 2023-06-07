@@ -3,11 +3,10 @@ import NavBar from 'components/common/navbar/NavBar.vue'
 import Swiper from 'components/content/Swiper.vue'
 import { getHomeMultidata } from 'network/home.js'
 import { ref } from 'vue'
-let result = ref({});
+let result = ref();
 getHomeMultidata().then(res => {
 	if (res.status === 200) {
 		result.value = ref(res.data.data.banner.list)
-		console.log('result.value',result.value);
 	}
 })
 </script>
@@ -18,11 +17,8 @@ getHomeMultidata().then(res => {
 				购物街
 			</template>
 		</NavBar>
-		<div v-if="result">
-
-		<Swiper :imglist=result >
+		<Swiper :imglist=result v-if="result">
 		</Swiper>
-	</div>
 
 
 		home

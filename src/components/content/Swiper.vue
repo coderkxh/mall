@@ -12,16 +12,15 @@ const props = defineProps({
 	imglist: Object
 })
 const imgs = ref(props.imglist)
-console.log('props.imglist', props.imglist);
 </script>
 <template>
-	<div>
+	<div v-if="imgs">
 		<swiper :slidesPerView="1" :spaceBetween="30" :loop="true" :centeredSlides="true" :pagination="{
 			clickable: true,
 		}" :autoplay="{
 	delay: 2500,
 	disableOnInteraction: false,
-}" :navigation="true" :modules="modules" class="mySwiper" v-if="imgs">
+}" :navigation="true" :modules="modules" class="mySwiper">
 			<swiper-slide v-for="(item, index) in imgs" :key="index">
 				<div style="width: 100%" v-if="item">
 					<img style="width: 100%; height: 100%" alt="图" :src="item.image" />
