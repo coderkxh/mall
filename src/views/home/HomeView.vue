@@ -1,15 +1,4 @@
-<script setup>
-import NavBar from 'components/common/navbar/NavBar.vue'
-import Swiper from 'components/content/Swiper.vue'
-import { getHomeMultidata } from 'network/home.js'
-import { ref } from 'vue'
-let result = ref();
-getHomeMultidata().then(res => {
-	if (res.status === 200) {
-		result.value = ref(res.data.data.banner.list)
-	}
-})
-</script>
+
 <template>
 	<div class="home">
 		<NavBar class="homenav">
@@ -24,6 +13,18 @@ getHomeMultidata().then(res => {
 		home
 	</div>
 </template>
+<script setup>
+import NavBar from 'components/common/navbar/NavBar.vue'
+import Swiper from 'components/content/Swiper.vue'
+import { getHomeMultidata } from 'network/home.js'
+import { ref } from 'vue'
+let result = ref();
+getHomeMultidata().then(res => {
+	if (res.status === 200) {
+		result.value = ref(res.data.data.banner.list)
+	}
+})
+</script>
 <style lang="less" scoped>
 .home {
 	.homenav {
